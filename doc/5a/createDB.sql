@@ -1,4 +1,4 @@
-﻿CREATE TABLE Energy_type (
+CREATE TABLE Energy_type (
             Name VARCHAR(40) PRIMARY KEY,
 Environmental_unit_cost money,
 Units VARCHAR(40)
@@ -15,14 +15,14 @@ CREATE TABLE Meter (
         Name Varchar(40) PRIMARY KEY,
         Energy_type Varchar(40),
         Units Varchar(40),
-        FOREIGN KEY (Name) REFERENCES Energy_type(Name)
+        FOREIGN KEY (Energy_type) REFERENCES Energy_type(Name)
 );
 
 
 CREATE TABLE Meter_month_cost (
         Month_name DATE,
         Meter_name varchar(40),
-        Amount int,
+        Amount Decimal(10,2),
         Total_monetary_cost money,
         Total_environmental_cost money,
         PRIMARY KEY (Month_name, Meter_name),
@@ -38,26 +38,3 @@ CREATE TABLE Weather_month (
         FOREIGN KEY (Name) REFERENCES MONTH(Name)
 );
 
-
-COPY Energy_type(Name, Environmental_unit_cost, Units)
-FROM ‘Energy_Type.csv’
-DELIMITER ‘,’
-CSV HEADER;
-
-
-COPY Month(Name, Num_days)
-FROM ‘Month.csv’
-DELIMITER ‘,’
-CSV HEADER;
-
-
-COPY Meter(Name, Energy_type, Units)
-FROM ‘Meter.csv’
-DELIMITER ‘,’
-CSV HEADER;
-
-
-COPY Meter_month_cost(Month_name, Meter_name, Amount, Total_monetary_cost, Total_environmental_cost)
-FROM ‘Meter_Month_Cost.csv’
-DELIMITER ‘,’
-CSV HEADER;

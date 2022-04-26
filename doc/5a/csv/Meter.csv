@@ -5,6 +5,8 @@ EL3,Electric - Grid,kWh (thousand Watt-hours)
 EL4,Electric - Grid,kWh (thousand Watt-hours)
 EL5,Electric - Grid,kWh (thousand Watt-hours)
 EL6,Electric - Grid,kWh (thousand Watt-hours)
+Estimated Co-Gen Electric,Other:,kWh (thousand Watt-hours)
+Fuel Oil Deliveries,Fuel Oil (No. 2), Gallons (US)
 NG1,Natural Gas,therms
 NG2,Natural Gas,therms
 NG3,Natural Gas,therms

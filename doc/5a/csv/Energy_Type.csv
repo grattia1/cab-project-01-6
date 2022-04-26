@@ -1,5 +1,6 @@
-Name,Environnmental Unit Cost,Usage Units
+Name,Environnmental Unit Cost,Units
 Electric - Grid,,kWh
 Electric - Co-Gen,,kBtu
-Fuel Oil,,gallons
+Fuel Oil (No. 2),,Gallons (US)
 Natural Gas,,therms
+Other:,,kWh
