@@ -1,7 +1,7 @@
 CREATE TABLE Energy_type (
-            Name VARCHAR(40) PRIMARY KEY,
-Environmental_unit_cost money,
-Units VARCHAR(40)
+		Name VARCHAR(40) PRIMARY KEY,
+		Environmental_unit_cost money,
+		Units VARCHAR(40)
 );
 
 

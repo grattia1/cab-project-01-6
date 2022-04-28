@@ -13,7 +13,7 @@ CSV HEADER;
 #kkey constraint. So what I did instead was make a MonthTemp table
 #Equiviliant to the Month table, excepmt without the primary key constraint.
 # I then poopulated the data to the monthtemp table. Finally, I insert the data
-#from the month_temp table to/populate.sh the month table using a cleanup querry.
+#from the month_temp table to the month table using a cleanup querry.
 psql project1 -c "CREATE TABLE Month_Temp(
         Name DATE,
         Num_days int
@@ -63,7 +63,7 @@ psql project1 -c "CREATE TABLE Temp_meter_month_cost (
 
 #populates the temp_meter_month_cost table
 psql project1 -c "\COPY Temp_meter_month_cost(Month_name, Meter_name, Amount, Total_monetary_cost, Total_environmental_cost)
-FROM '/home/lion/cab-project-01-6/doc/5a/csv/Meter_Month_Cost.csv'
+FROM '/csv/Meter_Month_Cost.csv'
 DELIMITER ','
 CSV HEADER;"
 
