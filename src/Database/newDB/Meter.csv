@@ -1,0 +1,25 @@
+Name,Energy Type,Units
+EL1,Electric - Grid,kWh
+EL2,Electric - Grid,kWh
+EL3,Electric - Grid,kWh
+EL4,Electric - Grid,kWh
+EL5,Electric - Grid,kWh
+EL6,Electric - Grid,kWh
+Estimated Co-Gen Electric,Other:,kWh
+Fuel Oil Deliveries,Fuel Oil (No. 2), Gallons (US)
+NG1,Natural Gas,kWh
+NG2,Natural Gas,kWh
+NG3,Natural Gas,kWh
+NG4,Natural Gas,kWh
+NG5,Natural Gas,kWh
+NG6,Natural Gas,kWh
+NG7,Natural Gas,kWh
+NG8,Natural Gas,kWh
+NG9,Natural Gas,kWh
+NG10,Natural Gas,kWh
+NG11,Natural Gas,kWh
+NG12,Natural Gas,kWh
+NG13,Natural Gas,kWh
+NG14,Natural Gas,kWh
+NG15,Natural Gas,kWh
+NG16,Natural Gas,kWh
