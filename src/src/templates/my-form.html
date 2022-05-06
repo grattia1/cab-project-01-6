@@ -1,0 +1,129 @@
+{% extends 'base.html' %}
+{% block content %}
+<!-- /templates/my-form.html-->
+
+<html>
+  <head>
+      <title>Flask Input Form</title>
+  </head>
+  <body>
+
+    <h2 style="text-align:center; background:rgb(9, 12, 212); color:white"><u>Energy Cost Project</u></h3>
+  <div class="card-holder">
+      <div class="card1 text-white bg-dark mb-3" style="width: 25rem;">
+      <h4 class="card-title">Display data by Energy Type: </h4>
+        <form action="/energy-types" method="POST">
+            <label name="energyID"> Please pick an energy type: </label>
+              <SELECT name="energyID" id="energyID">
+                {% for e in energy_list %}
+                  <OPTION value="{{e[0]}}">{{e[0]}}</option>
+                {% endfor %}
+              </SELECT>
+              <div>
+                <input type="submit" value="Submit">
+              </div>
+        </form>
+      </div>
+
+      <div class="card2 text-white bg-dark mb-3" style="width: 22rem;">
+        <h4 class="card-title">Display data by Month: </h4>
+        <form action="/date" method="POST">
+          <div>
+            <label name="monthName"> Please pick a month: </label>
+              <SELECT name="monthName" id="monthName">
+                <OPTION value=01>January</option>
+                <OPTION value=02>February</option>
+                <OPTION value=03>March</option>
+                <OPTION value=04>April</option>
+                <OPTION value=05>May</option>
+                <OPTION value=06>June</option>
+                <OPTION value=07>July</option>
+                <OPTION value=08>August</option>
+                <OPTION value=09>September</option>
+                <OPTION value=10>October</option>
+                <OPTION value=11>November</option>
+                <OPTION value=12>December</option>
+              </SELECT>
+          </div>
+          <div>
+            <label name="year"> Please pick a year: </label>
+              <SELECT name="year" id="year">
+                <OPTION value=2009>2009</option>
+                <OPTION value=2010>2010</option>
+                <OPTION value=2011>2011</option>
+                <OPTION value=2012>2012</option>
+                <OPTION value=2013>2013</option>
+                <OPTION value=2014>2014</option>
+                <OPTION value=2015>2015</option>
+                <OPTION value=2016>2016</option>
+                <OPTION value=2017>2017</option>
+                <OPTION value=2018>2018</option>
+                <OPTION value=2019>2019</option>
+                <OPTION value=2020>2020</option>
+                <OPTION value=2021>2021</option>
+              </SELECT>
+          </div>
+            <div>
+              <input type="submit" value="Submit">
+            </div>
+        </form>
+      </div>
+
+      <div class="card3 text-white bg-dark mb-3" style="width: 22rem;">
+      <h4 class="card-title">Display Charts by energy type: </h4>
+        <form action="/graph" method="POST">
+          <div>
+            <label name="lineGraph"> Please pick an energy type: </label>
+              <SELECT name="lineGraph" id="lineGraph">
+                <OPTION value="Electric - Grid">Electric - Grid</option>
+                <OPTION value="Fuel Oil (No. 2)">Fuel Oil</option>
+                <OPTION value="Natural Gas">Natural Gas</option>
+              </SELECT>
+          </div>
+              <div>
+                <input type="submit" value="Submit">
+              </div>
+        </form>
+      </div>
+    </div>
+  </body>
+  <style>
+
+    .card1{
+      /* other base style */
+      border-radius: 25px;
+      padding: 20px;
+      width: 200px;
+      height: 150px;
+      position: absolute;
+      top: 20%;
+      left: 40%;
+    }
+    .card2{
+      /* other base style */
+      border-radius: 25px;
+      padding: 20px;
+      width: 200px;
+      height: 165px;
+      position: absolute;
+      top: 40%;
+      left: 40%;
+    }
+    .card3{
+      /* other base style */
+      border-radius: 25px;
+      padding: 20px;
+      width: 200px;
+      height: 190px;
+      position: absolute;
+      top: 65%;
+      left: 40%;
+    }
+
+    body {
+      background-color: #5fc5ce;
+    }
+  </style>
+</html>
+
+{% endblock %}

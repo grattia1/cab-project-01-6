@@ -1,0 +1,133 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sample Chart</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+		
+</head>
+<!--
+
+<body>
+	<canvas id="lineChart" style="width:100%;max-width:700px"></canvas>
+	<script>
+		var ctx = document.getElementById("lineChart").getContext("2d")
+		var lineChart = new Chart(ctx, {
+			type: "line",
+			data: {
+				labels: {{ xvalues | safe }},
+				datasets: [
+					{
+						label: "Data points",
+						data: {{ yvalues | safe }},
+						fill: false,
+						borderColor: "rgb(75, 192, 192)",
+						lineTension: 0.1
+					}
+				]
+			},
+			options: {
+				responsive: false
+			}
+		});
+	</script>
+
+</body>
+-->
+
+<body>
+
+	<div>
+		<h2>Amount used vs Monetary Cost</h2>
+	</div>
+<div>
+	<canvas id="myChart_monetary" style="width:100%;max-width:600px"></canvas>
+	
+	<script>
+	
+	new Chart("myChart_monetary", {
+		type: "line",
+		data: {
+			labels: {{ xvalues | safe }},
+			datasets: [{
+				fill: false,
+				lineTension: 0,
+				backgroundColor: "rgba(0,0,255,1.0)",
+				borderColor: "rgba(0,0,255,0.1)",
+				data: {{ yvalues_monetary | safe }}
+			}]
+		},
+		options: {
+			legend: {display: false},
+		}
+	});
+	</script>
+</div>
+
+<div>
+	<h2>Amount used vs Environmental Cost</h2>
+</div>
+
+<div>
+	<canvas id="myChart_environmental" style="width:100%;max-width:600px"></canvas>
+	
+	<script>
+	
+	new Chart("myChart_environmental", {
+		type: "line",
+		data: {
+			labels: {{ xvalues | safe }},
+			datasets: [{
+				fill: false,
+				lineTension: 0,
+				backgroundColor: "rgba(0,0,255,1.0)",
+				borderColor: "rgba(0,0,255,0.1)",
+				data: {{ yvalues_environmental | safe }}
+			}]
+		},
+		options: {
+			legend: {display: false},
+		}
+	});
+	</script>
+</div>
+
+<div>
+	<h2>Amount used vs Total Cost</h2>
+</div>
+
+<div>
+	<canvas id="myChart_total" style="width:100%;max-width:600px"></canvas>
+	
+	<script>
+	
+	new Chart("myChart_total", {
+		type: "line",
+		data: {
+			labels: {{ xvalues | safe }},
+			datasets: [{
+				fill: false,
+				lineTension: 0,
+				backgroundColor: "rgba(0,0,255,1.0)",
+				borderColor: "rgba(0,0,255,0.1)",
+				data: {{ yvalues_total | safe }}
+			}]
+		},
+		options: {
+			legend: {display: false},
+		}
+	});
+	</script>
+</div>
+
+</body>
+
+</html>
+
+
+
+{% endblock %}

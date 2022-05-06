@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% block content %}
+<!-- /templates/my-result.html-->
+
+<html>
+    <head>
+        <title>Flask result table using nested for loops</title>
+    </head>
+
+    <body>
+        <table class="table table-dark table-striped table-hover table-bordered" >
+            <!-- column header for loop in jinja template -->
+            <thead>
+                <tr>
+                {%for head in heads%}
+                    <th scope="col">{{head}}</th>
+                {%endfor%}
+                </tr>
+            </thead>
+            <!-- nested for loops in jinja template -->
+            <tbody>
+                {%for row in rows%}
+                    <tr>
+                    {%for col in row%}
+                        <td scope="row">{{col}}</td>
+                    {%endfor%}
+                    </tr>
+                {%endfor%}
+            </tbody>
+        </table>
+    </body>
+</html>
+
+{% endblock %}
